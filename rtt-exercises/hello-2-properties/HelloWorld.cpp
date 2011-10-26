@@ -33,7 +33,7 @@ using namespace Orocos;
  * Next save the properties of this component to a hello.xml file:
  * You will need to install the 'marshalling' service using the TaskBrowser
  * at runtime:
- * ** TaskBrowser: type '.provides marshalling'
+ * ** TaskBrowser: type '.provide marshalling'
  *
  * (note: To make this permanent for your component:
  *    In C++ you need to #include <rtt/marsh/Marshalling.hpp> 
