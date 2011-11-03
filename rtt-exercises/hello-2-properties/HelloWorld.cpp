@@ -33,14 +33,16 @@ using namespace Orocos;
  * Next save the properties of this component to a hello.xml file:
  * You will need to install the 'marshalling' service using the TaskBrowser
  * at runtime:
- * ** TaskBrowser: type '.provides marshalling'
+ * ** TaskBrowser: type '.provide marshalling'
  *
- * (note: To make this permanent for your component, 
- *    in C++ you need to #include <rtt/marsh/Marshalling.hpp> 
+ * (note: To make this permanent for your component:
+ *    In C++ you need to #include <rtt/marsh/Marshalling.hpp> 
  *    and add to the constructor: this->getProvider<Marshalling>("marshalling");
- *    and in the CMakeLists.txt: add rtt-marshalling to the list of components to look for in
+ *
+ *    In the CMakeLists.txt: add rtt-marshalling to the list of components to look for in
  *    find_package(Orocos-RTT REQUIRED) macro.
- *    See also: http://www.orocos.org/wiki/orocos/toolchain/getting-started/cmake-and-building
+ *    See : http://www.orocos.org/wiki/orocos/toolchain/getting-started/cmake-and-building
+ *    and use that syntax in the CMakeLists.txt file to link 'HelloWorld' with marshalling.
  * endnote)
  *
  * When marshalling is loaded:
