@@ -53,9 +53,9 @@ echo "Packaging done."
 echo "Press a key to copy files to server, Ctrl-C to abort..."
 read -s -n1
 
-  USER=orocos
+  USER=psoetens
   SERVER=ftp.mech.kuleuven.be
-  SPREFIX=pub_html/pub
+  SPREFIX=orocos/pub
   BRANCH=stable
 
 # Orocos Examples
