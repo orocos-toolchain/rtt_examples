@@ -1,7 +1,7 @@
 // Start this script by using:
 // deployer-gnulinux -s start.ops -linfo
 
-import("hello-3-dataports")
+import("hello_3_dataports")
 
 loadComponent("hello","Example::Hello")
 loadComponent("world","Example::World")

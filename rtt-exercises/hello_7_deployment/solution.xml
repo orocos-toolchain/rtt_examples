@@ -17,7 +17,7 @@
   -->
  
   <!-- Exercise: Add an 'Import' statement such that the deployer
-       looks for components of the current ("hello-7-deployment") package.
+       looks for components of the current ("hello_7_deployment") package.
        NOTE: a "make install" is required before
 	     the current package can be imported.
 
@@ -31,7 +31,7 @@
        Also, you should then notice that a 'World' component is loaded but unconfigured.
        If this works, you can continue with the exercise below.
   -->
-  <simple name="Import" type="string"><value>hello-7-deployment</value></simple>
+  <simple name="Import" type="string"><value>hello_7_deployment</value></simple>
 
   <!-- Exercise: Create an instance of the "Example::Hello" type of component
        and name it "Hello". Assign it an "Activity"

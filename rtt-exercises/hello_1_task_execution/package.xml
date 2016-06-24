@@ -2,7 +2,7 @@
     <name>hello_1_task_execution</name>
     <version>0.0.0</version>
     <description>
-        This package contains the components of the hello-1-task-execution package
+        This package contains the components of the hello_1_task_execution package
     </description>
     <maintainer email="orocos-dev@lists.mech.kuleuven.be">Orocos Developers</maintainer>
     <license>BSD</license>

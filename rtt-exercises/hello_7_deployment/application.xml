@@ -17,7 +17,7 @@
   -->
  
   <!-- Exercise: Add an 'Import' statement such that the deployer
-       looks for components of the current ("hello-7-deployment") package.
+       looks for components of the current ("hello_7_deployment") package.
        NOTE: a "make install" is required before
 	     the current package can be imported.
 

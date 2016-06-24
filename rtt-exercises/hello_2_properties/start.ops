@@ -2,7 +2,7 @@
 // deployer-gnulinux -s start.ops -linfo
 
 // For ROS builds, we could also import using the package name.
-import("hello-2-properties")
+import("hello_2_properties")
 
 loadComponent("hello","Example::Hello")
 

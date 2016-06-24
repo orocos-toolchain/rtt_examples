@@ -23,7 +23,7 @@ find_package(OROCOS-RTT REQUIRED ${RTT_HINTS})
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 
 # Creates a component library libHello-<target>.so
-# and installs in the directory lib/orocos/hello-7-deployment/
+# and installs in the directory lib/orocos/hello_7_deployment/
 #
 orocos_component(hello Hello.cpp) # ...you may add multiple source files
 orocos_component(world World.cpp) # ...you may add multiple source files
