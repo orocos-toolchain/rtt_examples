@@ -33,6 +33,10 @@ $ cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd)/../../install
 $ make install
 $ cd ..
 
+For catkin users:
+
+$ catkin build -v
+
 Running
 -------
 
