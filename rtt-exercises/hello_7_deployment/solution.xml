@@ -17,7 +17,7 @@
   -->
  
   <!-- Exercise: Add an 'Import' statement such that the deployer
-       looks for components of the current ("hello-7-deployment") package.
+       looks for components of the current ("hello_7_deployment") package.
        NOTE: a "make install" is required before
 	     the current package can be imported.
 
@@ -31,6 +31,7 @@
        Also, you should then notice that a 'World' component is loaded but unconfigured.
        If this works, you can continue with the exercise below.
   -->
+  <simple name="Import" type="string"><value>hello_7_deployment</value></simple>
 
   <!-- Exercise: Create an instance of the "Example::Hello" type of component
        and name it "Hello". Assign it an "Activity"
@@ -53,15 +54,45 @@
        a property file 'Hello.cpf'
 
        -->
+  <struct name="HelloDataConnection" type="ConnPolicy">
+  </struct>
+  <struct name="HelloBufferConnection" type="ConnPolicy">
+  </struct>
 
+
+  <struct name="Hello" type="Example::Hello">
+    <struct name="Activity" type="Activity">
+      <simple name="Priority" type="short"><value>10</value></simple>
+      <simple name="Period" type="double"><value>0.1</value></simple>
+      <simple name="Scheduler" type="string"><value>ORO_SCHED_RT</value></simple>
+    </struct>
+    <struct name="Peers" type="PropertyBag">
+      <simple type="string"><value>World</value></simple>
+    </struct>
+    <struct name="Ports" type="PropertyBag">
+      <simple name="outport" type="string"><value>HelloDataConnection</value></simple>
+      <simple name="inport" type="string"><value>HelloBufferConnection</value></simple>
+    </struct>
+    <simple name="AutoConf" type="boolean"><value>1</value></simple>
+    <simple name="AutoStart" type="boolean"><value>1</value></simple>
+  </struct>
+       
   <!-- You must extend the World component likewise as the Hello component
-       above in order to have the application fully functional : AutoStart/AutoConf
-       it and make that it's ports are part of a data flow connection.
+       above in order to have the application fully functional.
        -->
   <struct name="World" type="Example::World">
     <struct name="Activity" type="Activity">
       <simple name="Priority" type="short"><value>1</value></simple>
       <simple name="Scheduler" type="string"><value>ORO_SCHED_RT</value></simple>
+    </struct>
+  <simple name="AutoConf" type="boolean"><value>1</value></simple>
+  <simple name="AutoStart" type="boolean"><value>1</value></simple>
+    <struct name="Peers" type="PropertyBag">
+      <simple type="string"><value>Hello</value></simple>
+    </struct>
+    <struct name="Ports" type="PropertyBag">
+      <simple name="outport" type="string"><value>HelloBufferConnection</value></simple>
+      <simple name="inport" type="string"><value>HelloDataConnection</value></simple>
     </struct>
   </struct>
 </properties>

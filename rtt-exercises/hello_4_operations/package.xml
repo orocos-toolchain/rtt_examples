@@ -1,0 +1,11 @@
+<package format="2">
+    <name>hello_4_operations</name>
+    <version>0.0.0</version>
+    <description>
+        This package contains the components of the hello-4_operations package
+    </description>
+    <maintainer email="orocos-dev@lists.mech.kuleuven.be">Orocos Developers</maintainer>
+    <license>BSD</license>
+    <depend>rtt</depend>
+    <depend>ocl</depend>
+</package>

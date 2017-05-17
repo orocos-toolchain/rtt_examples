@@ -12,23 +12,23 @@ cmake_minimum_required(VERSION 2.6.3)
 # macro, except for orocos_typekit, where the target is fully
 # controlled by generated code of 'typegen'.
 #
-project(hello-7-deployment)
+project(hello_6_scripting)
 
 # Set the CMAKE_PREFIX_PATH in case you're not using Orocos through ROS
 # for helping these find commands find RTT.
-find_package(OROCOS-RTT REQUIRED ${RTT_HINTS})
+# NOTE: we add rtt-scripting as a plugin to look for:
+find_package(OROCOS-RTT REQUIRED rtt-scripting ${RTT_HINTS})
 
 # Defines the orocos_* cmake macros. See that file for additional
 # documentation.
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 
-# Creates a component library libHello-<target>.so
-# and installs in the directory lib/orocos/hello-7-deployment/
-#
-orocos_component(hello Hello.cpp) # ...you may add multiple source files
-orocos_component(world World.cpp) # ...you may add multiple source files
-#
-# You may add multiple orocos_component statements.
+# Creates an orocos component HelloWorld
+#orocos_use_package(ocl-taskbrowser)
+orocos_component(HelloWorld HelloWorld.cpp) # ...you may add multiple source files
+
+# Link with the rtt-scripting plugin, since we include a header of it (rtt/scripting/Scripting.hpp):
+target_link_libraries(HelloWorld ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY})
 
 #
 # Makes this an installable/usable package for other packages.

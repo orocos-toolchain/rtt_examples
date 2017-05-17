@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 2.6.3)
 # macro, except for orocos_typekit, where the target is fully
 # controlled by generated code of 'typegen'.
 #
-project(hello-5-services)
+project(hello_7_deployment)
 
 # Set the CMAKE_PREFIX_PATH in case you're not using Orocos through ROS
 # for helping these find commands find RTT.
@@ -22,9 +22,13 @@ find_package(OROCOS-RTT REQUIRED ${RTT_HINTS})
 # documentation.
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 
-# Creates an orocos executable HelloWorld
-orocos_use_package(ocl-taskbrowser)
-orocos_executable(HelloWorld HelloWorld.cpp) # ...you may add multiple source files
+# Creates a component library libHello-<target>.so
+# and installs in the directory lib/orocos/hello_7_deployment/
+#
+orocos_component(hello Hello.cpp) # ...you may add multiple source files
+orocos_component(world World.cpp) # ...you may add multiple source files
+#
+# You may add multiple orocos_component statements.
 
 #
 # Makes this an installable/usable package for other packages.

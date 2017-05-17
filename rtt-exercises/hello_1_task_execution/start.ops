@@ -2,6 +2,6 @@
 // deployer-gnulinux -s start.ops -linfo
 
 // For ROS builds, we could also import using the package name.
-import("hello-1-task-execution")
+import("hello_1_task_execution")
 
 loadComponent("hello","Example::Hello")

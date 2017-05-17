@@ -2,11 +2,16 @@
 // deployer-gnulinux -s start.ops -linfo
 
 // For ROS builds, we could also import using the package name.
-import("hello-2-properties")
+import("hello_4_operations")
 
 loadComponent("hello","Example::Hello")
+loadComponent("world","Example::World")
 
 var double period = 0.5
 setActivity("hello", period, LowestPriority , ORO_SCHED_OTHER )
+setActivity("world", period, LowestPriority , ORO_SCHED_OTHER )
 
+connectPeers("hello","world")
+
+hello.configure()
 hello.start()
